@@ -7,6 +7,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            inputSearch:"",
             inputChat: "",
             activeChat: 0,
             message: "ciao",
