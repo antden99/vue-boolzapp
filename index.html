@@ -55,83 +55,18 @@
                     </div>
 
                     <div class="users">
-                        <div class="user_ selection">
+                        <div class="user_ selection" v-for="contact in contacts">
                             <div class="image">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
+                                <img :src="contact.avatar" alt="">
                             </div>
-                            <div class="name_chat"><strong>Michele</strong>
-                                <div class="text_chat">Lorem ipsum dolor sit.</div>
+                            <div class="name_chat"><strong>{{contact.name}}</strong>
+                                <div class="text_chat">Ultimo messaggio inviato</div>
                             </div>
                             <div class="time">
                                 16:15
                             </div>
                         </div>
-                        <div class="user_ selection">
-                            <div class="image">
-                                <img src="./assets/img/avatar_2.jpg" alt="">
-                            </div>
-                            <div class="name_chat"><strong>Fabio</strong>
-                                <div class="text_chat">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="time">
-                                16:05
-                            </div>
-                        </div>
-                        <div class="user_ selection">
-                            <div class="image">
-                                <img src="./assets/img/avatar_3.jpg" alt="">
-                            </div>
-                            <div class="name_chat"><strong>Samuele</strong>
-                                <div class="text_chat">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="time">
-                                16:03
-                            </div>
-                        </div>
-                        <div class="user_ selection">
-                            <div class="image">
-                                <img src="./assets/img/avatar_4.jpg" alt="">
-                            </div>
-                            <div class="name_chat"><strong>Alessandro B.</strong>
-                                <div class="text_chat">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="time">
-                                15:50
-                            </div>
-                        </div>
-                        <div class="user_ selection">
-                            <div class="image">
-                                <img src="./assets/img/avatar_5.jpg" alt="">
-                            </div>
-                            <div class="name_chat"><strong>Alessandro L.</strong>
-                                <div class="text_chat">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="time">
-                                15:45
-                            </div>
-                        </div>
-                        <div class="user_ selection">
-                            <div class="image">
-                                <img src="./assets/img/avatar_6.jpg" alt="">
-                            </div>
-                            <div class="name_chat"><strong>Alessandro L.</strong>
-                                <div class="text_chat">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="time">
-                                15:30
-                            </div>
-                        </div>
-                        <div class="user_ selection">
-                            <div class="image">
-                                <img src="./assets/img/avatar_7.jpg" alt="">
-                            </div>
-                            <div class="name_chat"><strong>Alessandro L.</strong>
-                                <div class="text_chat">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="time">
-                                16:40
-                            </div>
-                        </div>
+                       
 
                     </div>
 
