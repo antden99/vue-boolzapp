@@ -199,16 +199,37 @@ createApp({
         },
 
     },
-    computed: {
+    computed:
+    {
         usersSearch() {
 
+            //rendo la parola inserita minuscola per non avere problemi
             const search = this.inputSearch.toLowerCase();
 
-          for (let index = 0; index < this.length; index++) {
-            const element = array[index];
-            
-          }
+            //faccio un ciclo su tutta la lista dei contatti e analizzo contatto per contatto
+            this.contacts.forEach((contact) => {
+
+                //rendo la parola inserita minuscola per non avere problemi
+                const lowerName = contact.name.toLowerCase();
+
+                //se la parola è inclusa nel nome allora applico al contatto true su visibilità
+                if (lowerName.includes(search)) {
+                    console.log(lowerName + " include " + search)
+                    contact.visible = true;
+                    console.log(contact.visible)
+
+                //altrimenti falso
+                } else {
+                    contact.visible = false;
+                }
+            });
+
+
+
         }
     }
+
+
+
 
 }).mount("#app")

@@ -48,6 +48,7 @@
                         </div>
 
                     </div>
+
                     <div class="box_search">
 
                         <div><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -56,8 +57,13 @@
 
                     </div>
 
+
+
+
                     <div class="users">
-                        <div class="user_ selection" v-for="(contact,index) in contacts" @click="activeChat=index">
+                        <div class="user_ selection" v-for="(contact,index) in contacts" @click="activeChat=index"
+                            v-bind:class="{ghost:contact.visible === false}">
+                            <!--se la visibilità del contatto è falso allora sparisce con display none-->
                             <div class="image">
                                 <img :src="contact.avatar" alt="">
                             </div>
