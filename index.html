@@ -23,8 +23,9 @@
                 <div class="col-4 col-1-tablet ">
 
                     <div class="profile">
-                        <div class="image">
-                            <img src="./assets/img/avatar_io.jpg" alt="">
+                        <div class="image d_flex">
+                            <img src="./assets/img/avatar_5.jpg" alt="">
+                            <div>Antonio</div>
                         </div>
 
                         <div class="function">
@@ -90,32 +91,9 @@
                             </div>
                         </div>
 
-                        <div class="section_message">
-                            <div class="right">
-                               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, earum.
-                                <div class="info_message">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                    <div class="menu_tendina">
-                                        <div class="item">Info messaggio</div>
-                                        <div class="item">Cancella messaggio</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class=" left">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, amet. Facere
-                                incidunt sed amet sit expedita error quo reprehenderit distinctio. Lorem ipsum
-                                dolor
-                                sit amet consectetur adipisicing elit. Fugiat iusto quis cupiditate deleniti
-                                culpa
-                                natus quia amet corrupti quaerat maxime!lorem50
-                                <div class="info_message">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                    <div class="menu_tendina">
-                                        <div class="item">Info messaggio</div>
-                                        <div class="item">Cancella messaggio</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="section_message" v-for="message in contacts[activeChat].messages">
+                          
+                            <p>{{message}}</p>
 
 
 
