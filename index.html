@@ -25,7 +25,7 @@
                     <div class="profile">
                         <div class="image d_flex">
                             <img src="./assets/img/avatar_5.jpg" alt="">
-                            <div>Antonio</div>
+                            <div class="profile">Antonio</div>
                         </div>
 
                         <div class="function">
@@ -73,9 +73,9 @@
                 </div>
 
                 <div class="col-8 col-11-tablet col-12-mobile">
-                    <div class="chat" >
+                    <div class="chat">
                         <div class="user_">
-                            <div class="image" >
+                            <div class="image">
                                 <img :src="contacts[activeChat].avatar" alt="">
 
                             </div>
@@ -91,11 +91,13 @@
                             </div>
                         </div>
 
-                        <div class="section_message" v-for="message in contacts[activeChat].messages">
-                          
-                            <p>{{message}}</p>
+                        <div class="section_message">
+                            <!-- v-bind:class="{right: message.status===sent}">{{message.message}} {{message.status}}-->
+                            <div class="" v-for="message in contacts[activeChat].messages">
+                                <p v-if="message.status==='sent'" class="right">{{message.message}}</p>
+                                <p v-else="message.status==='received'" class="left">{{message.message}}</p>
 
-
+                            </div>
 
                         </div>
 
