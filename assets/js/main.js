@@ -7,7 +7,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            inputSearch:"",
+            inputSearch: "",
             inputChat: "",
             activeChat: 0,
             message: "ciao",
@@ -196,6 +196,18 @@ createApp({
             }, 1000)
 
             this.inputChat = ""
+        },
+
+    },
+    computed: {
+        usersSearch() {
+
+            const search = this.inputSearch.toLowerCase();
+
+          for (let index = 0; index < this.length; index++) {
+            const element = array[index];
+            
+          }
         }
     }
 
