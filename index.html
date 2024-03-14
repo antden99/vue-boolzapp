@@ -96,7 +96,6 @@
                             <div class="" v-for="message in contacts[activeChat].messages">
                                 <p v-if="message.status==='sent'" class="right">{{message.message}}</p>
                                 <p v-else="message.status==='received'" class="left">{{message.message}}</p>
-
                             </div>
 
                         </div>
@@ -106,9 +105,9 @@
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
 
-                            <form action="#" method="get">
-                                <input type="text" placeholder="Scrivi un messaggio" name="my_message">
-                            </form>
+                            
+                                <input type="text" placeholder="Scrivi un messaggio" name="my_message" v-model="inputChat" @keyup.enter="addMessage(activeChat)">
+                           
 
                             <div class="registration">
                                 <i class=" fa-solid fa-microphone"></i>

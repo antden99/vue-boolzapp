@@ -7,7 +7,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            activeChat:0,
+            inputChat: "",
+            activeChat: 0,
             message: "ciao",
             contacts: [
                 {
@@ -172,6 +173,28 @@ createApp({
                     ],
                 }
             ]
+        }
+    },
+    methods: {
+        addMessage(chatAttiva) {
+
+            const newMyMessage = {
+                date: '10/01/2020 15:30:55',
+                message: this.inputChat,
+                status: 'sent',
+            }
+            this.contacts[chatAttiva].messages.push(newMyMessage)
+
+            setTimeout(() => {
+                const newUserMessage = {
+                    date: '10/01/2020 15:30:55',
+                    message: 'ok',
+                    status: 'received',
+                }
+                this.contacts[chatAttiva].messages.push(newUserMessage)
+            }, 1000)
+
+            this.inputChat = ""
         }
     }
 
