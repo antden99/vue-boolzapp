@@ -7,6 +7,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            activeChat:0,
             message: "ciao",
             contacts: [
                 {

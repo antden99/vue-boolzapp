@@ -18,7 +18,7 @@
 <body>
 
     <div id="app" class="wrapper">
-        <div class="container" >
+        <div class="container">
             <div class="row">
                 <div class="col-4 col-1-tablet ">
 
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="users">
-                        <div class="user_ selection" v-for="contact in contacts">
+                        <div class="user_ selection" v-for="(contact,index) in contacts" @click="activeChat=index">
                             <div class="image">
                                 <img :src="contact.avatar" alt="">
                             </div>
@@ -66,21 +66,19 @@
                                 16:15
                             </div>
                         </div>
-                       
-
                     </div>
 
 
                 </div>
 
                 <div class="col-8 col-11-tablet col-12-mobile">
-                    <div class="chat">
+                    <div class="chat" >
                         <div class="user_">
-                            <div class="image">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
+                            <div class="image" >
+                                <img :src="contacts[activeChat].avatar" alt="">
 
                             </div>
-                            <div><strong>Michele</strong>
+                            <div><strong>{{contacts[activeChat].name}}</strong>
                                 <div>Ultimo accesso oggi alle 16:26</div>
                             </div>
                             <div class="function">
@@ -93,16 +91,8 @@
                         </div>
 
                         <div class="section_message">
-
-
                             <div class="right">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolorum
-                                vero
-                                fuga cumque saepe minima tenetur fugiat quasi rem dolorem! Lorem ipsum dolor sit
-                                amet consectetur adipisicing elit. Facere soluta magnam repudiandae inventore
-                                necessitatibus unde ea dignissimos fugiat dolore reiciendis.
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus velit qui
-                                at. Aperiam dolorem labore quisquam, rem totam ipsum doloremque molestias.
+                               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, earum.
                                 <div class="info_message">
                                     <i class="fa-solid fa-chevron-down"></i>
                                     <div class="menu_tendina">
