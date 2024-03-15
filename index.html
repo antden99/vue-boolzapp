@@ -101,10 +101,26 @@
                         <div class="section_message">
                             <!-- v-bind:class="{right: message.status===sent}">{{message.message}} {{message.status}}-->
                             <div class="" v-for="message in contacts[activeChat].messages">
-                                <p v-if="message.status==='sent'" class="right">{{message.message}} <span
-                                        class="info_message"><i class="fa-solid fa-chevron-down"></i></span></p>
-                                <p v-else="message.status==='received'" class="left">{{message.message}} <span
-                                        class="info_message"><i class="fa-solid fa-chevron-down"></i></span></p>
+
+                                <p v-if="message.status==='sent'" class="right">
+                                    {{message.message}}
+                                    <span class="info_message" @click="infoMessage()"><i
+                                            class="fa-solid fa-chevron-down"></i>
+                                        </span></span>
+                                </p>
+
+                                <p v-else="message.status==='received'" class="left">
+                                    {{message.message}}
+                                    <span class="info_message" @click="infoMessage()"><i
+                                            class="fa-solid fa-chevron-down"></i>
+
+                                        <ul v-bind:class="{menu_tendina: open===true}">
+                                            <li>info messaggio</li>
+                                            <li>cancella messaggio</li>
+                                        </ul>
+                                                                            
+                                        </span>
+                                </p>
 
                             </div>
 

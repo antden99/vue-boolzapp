@@ -292,3 +292,9 @@ input {
 }
 
 /* #endregion Media */
+
+
+.menu_tendina{
+    display: flex;
+    flex-direction: column;
+}

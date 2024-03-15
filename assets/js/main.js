@@ -7,6 +7,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            open: false,
             inputSearch: "",
             inputChat: "",
             activeChat: 0,
@@ -197,6 +198,17 @@ createApp({
 
             this.inputChat = ""
         },
+        infoMessage() {
+            console.log("informazioni");
+
+            if (this.open === false) {
+
+                this.open = true
+
+            } else if (this.open === true) {
+                this.open = false
+            }
+        }
 
     },
     computed:
@@ -214,11 +226,11 @@ createApp({
 
                 //se la parola è inclusa nel nome allora applico al contatto true su visibilità
                 if (lowerName.includes(search)) {
-                    console.log(lowerName + " include " + search)
+                    //console.log(lowerName + " include " + search)
                     contact.visible = true;
                     console.log(contact.visible)
 
-                //altrimenti falso
+                    //altrimenti falso
                 } else {
                     contact.visible = false;
                 }
