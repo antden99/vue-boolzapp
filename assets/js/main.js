@@ -1,7 +1,4 @@
-console.log("tutto ok");
-
-
-
+//console.log("tutto ok");
 
 const { createApp } = Vue;
 createApp({
@@ -183,7 +180,7 @@ createApp({
         addMessage(chatAttiva) {
 
             const newMyMessage = {
-                date: '10/01/2020 15:30:55',
+                date: '10/01/2020 20:30:55',
                 message: this.inputChat,
                 status: 'sent',
             }
@@ -191,7 +188,7 @@ createApp({
 
             setTimeout(() => {
                 const newUserMessage = {
-                    date: '10/01/2020 15:30:55',
+                    date: '10/01/2020 20:32:55',
                     message: 'ok',
                     status: 'received',
                 }
@@ -227,13 +224,23 @@ createApp({
             console.log(message, index)
 
         },
+        
         newDate(message, index) {
-            console.log(message.date, index)
+            //console.log(message.date, index)
 
-            const str = message.date;
+            let str = message.date;
             const words = str.split(' ');
-            console.log(words[1]);
-            return words[1]
+            //console.log(words[1]);
+
+            const words_2 = words[1].split(':')
+            //console.log(words_2)
+            
+            return `${words_2[0]}:${words_2[1]}`
+        },
+        lastMessage(contact){
+            //console.log(contact)
+           //console.log( contact.messages[contact.messages.length -1])
+            return contact.messages[contact.messages.length -1].message
         }
 
     },
@@ -253,7 +260,7 @@ createApp({
                 if (lowerName.includes(search)) {
                     //console.log(lowerName + " include " + search)
                     contact.visible = true;
-                    console.log(contact.visible)
+                    //console.log(contact.visible)
 
                     //altrimenti falso
                 } else {
@@ -265,8 +272,5 @@ createApp({
     },
 
 
-
-
-
-
 }).mount("#app")
+
