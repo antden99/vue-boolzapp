@@ -114,11 +114,11 @@
                                     <span class="info_message" @click="infoMessage()"><i
                                             class="fa-solid fa-chevron-down"></i>
 
-                                        <ul v-bind:class="{menu_tendina: open===true}">
-                                            <li>info messaggio</li>
-                                            <li>cancella messaggio</li>
+                                        <ul v-bind:class="{menu_tendina: open===true}" v-if="open===true">
+                                            <li>Info messaggio</li>
+                                            <li>Cancella messaggio</li>
                                         </ul>
-                                                                            
+                                                                       
                                         </span>
                                 </p>
 

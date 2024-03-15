@@ -294,7 +294,18 @@ input {
 /* #endregion Media */
 
 
-.menu_tendina{
+.menu_tendina {
     display: flex;
     flex-direction: column;
+    width: 150px;
+    text-align: center;
+    gap: 0;
+
+
+    > li {
+
+        color: black;
+        border: 1px solid black;
+        background-color: white;
+    }
 }
