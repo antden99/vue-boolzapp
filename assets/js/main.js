@@ -179,8 +179,10 @@ createApp({
     methods: {
         addMessage(chatAttiva) {
 
+            console.log(new Date().toLocaleString())
+
             const newMyMessage = {
-                date: '10/01/2020 20:30:55',
+                date: new Date().toLocaleString(),
                 message: this.inputChat,
                 status: 'sent',
             }
@@ -188,7 +190,7 @@ createApp({
 
             setTimeout(() => {
                 const newUserMessage = {
-                    date: '10/01/2020 20:32:55',
+                    date: new Date().toLocaleString(),
                     message: 'ok',
                     status: 'received',
                 }
@@ -224,7 +226,7 @@ createApp({
             console.log(message, index)
 
         },
-        
+
         newDate(message) {
             //console.log(message.date, index)
 
@@ -234,13 +236,13 @@ createApp({
 
             const words_2 = words[1].split(':')
             //console.log(words_2)
-            
+
             return `${words_2[0]}:${words_2[1]}`
         },
-        lastMessage(contact){
+        lastMessage(contact) {
             //console.log(contact)
-           //console.log( contact.messages[contact.messages.length -1])
-            return contact.messages[contact.messages.length -1].message
+            //console.log( contact.messages[contact.messages.length -1])
+            return contact.messages[contact.messages.length - 1].message
         }
 
     },
