@@ -70,8 +70,8 @@
                             <div class="name_chat"><strong>{{contact.name}}</strong>
                                 <div class="text_chat" v-if="contact.messages.length > 0">{{lastMessage(contact)}}</div>
                             </div>
-                            <div class="time">
-                                16:15
+                            <div class="time" v-if="contact.messages.length > 0">
+                                {{newDate(contact.messages[contact.messages.length -1])}}
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="section_message">
-                          
+
                             <div class="" v-for="(message,index) in contacts[activeChat].messages">
 
                                 <div v-if="message.status==='sent'" class="right">
@@ -112,12 +112,12 @@
                                             <li class="info" @click="">Info messaggio</li>
                                             <li class="info" @click="removeMessage(index)">Cancella messaggio</li>
                                         </ul>
-                                      
+
                                     </div>
                                     <div class="hours">{{newDate(message,index)}}</div>
                                 </div>
 
-                               
+
                                 <div v-if="message.status==='received'" class="left">
                                     {{message.message}}
                                     <div class="info_message" @click="infoMessage(index)"><i
@@ -128,12 +128,12 @@
                                             <li class="info" @click="">Info messaggio</li>
                                             <li class="info" @click="removeMessage(index)">Cancella messaggio</li>
                                         </ul>
-                                       
+
                                     </div>
 
                                     <div class="hours">{{newDate(message,index)}}</div>
                                 </div>
-                                
+
 
                             </div>
 

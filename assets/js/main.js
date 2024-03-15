@@ -225,7 +225,7 @@ createApp({
 
         },
         
-        newDate(message, index) {
+        newDate(message) {
             //console.log(message.date, index)
 
             let str = message.date;
