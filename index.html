@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="section_message">
-                            <!-- v-bind:class="{right: message.status===sent}">{{message.message}} {{message.status}}-->
+                          
                             <div class="" v-for="(message,index) in contacts[activeChat].messages">
 
                                 <div v-if="message.status==='sent'" class="right">
@@ -112,8 +112,9 @@
                                             <li class="info" @click="">Info messaggio</li>
                                             <li class="info" @click="removeMessage(index)">Cancella messaggio</li>
                                         </ul>
-                                        <p>{{index}} {{identificaIndex}}</p>
+                                      
                                     </div>
+                                    <div class="hours">{{newDate(message,index)}}</div>
                                 </div>
 
                                
@@ -127,8 +128,10 @@
                                             <li class="info" @click="">Info messaggio</li>
                                             <li class="info" @click="removeMessage(index)">Cancella messaggio</li>
                                         </ul>
-                                        <p>{{index}} {{identificaIndex}}</p>
+                                       
                                     </div>
+
+                                    <div class="hours">{{newDate(message,index)}}</div>
                                 </div>
                                 
 

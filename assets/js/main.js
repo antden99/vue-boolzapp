@@ -7,7 +7,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            identificaIndex:0,
+
+            identificaIndex: 0,
             open: false,
             inputSearch: "",
             inputChat: "",
@@ -204,30 +205,41 @@ createApp({
             console.log(indexMessage)
 
             if (this.open === false) {
-                
-               
-               this.open = true
-               this.identificaIndex=indexMessage;
+
+
+                this.open = true
+                this.identificaIndex = indexMessage;
 
             } else if (this.open === true) {
                 this.open = false
-                this.identificaIndex=indexMessage;
+                this.identificaIndex = indexMessage;
             }
         },
-        removeMessage(indexRemove){
-            
+        removeMessage(indexRemove) {
+
             //console.log(indexRemove)
             //console.log(this.contacts[this.activeChat].messages)
-            this.contacts[this.activeChat].messages.splice(indexRemove,1);
-            
-           
+            this.contacts[this.activeChat].messages.splice(indexRemove, 1);
+
+
+        },
+        data(message, index) {
+            console.log(message, index)
+
+        },
+        newDate(message, index) {
+            console.log(message.date, index)
+
+            const str = message.date;
+            const words = str.split(' ');
+            console.log(words[1]);
+            return words[1]
         }
 
     },
     computed:
     {
         usersSearch() {
-
             //rendo la parola inserita minuscola per non avere problemi
             const search = this.inputSearch.toLowerCase();
 
@@ -248,11 +260,11 @@ createApp({
                     contact.visible = false;
                 }
             });
+        },
+
+    },
 
 
-
-        }
-    }
 
 
 
