@@ -217,11 +217,6 @@ input {
     font-size: 25px;
 }
 
-.menu_tendina {
-    display: none;
-}
-
-
 /* #region Media */
 
 @media screen and (max-width:991px) {
@@ -293,5 +288,10 @@ input {
         color: black;
         border: 1px solid black;
         background-color: white;
+       
     }
+}
+
+.info:hover{
+    cursor: pointer;
 }

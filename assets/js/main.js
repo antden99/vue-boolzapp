@@ -200,7 +200,7 @@ createApp({
             this.inputChat = ""
         },
         infoMessage(indexMessage) {
-            console.log("informazioni");
+            //console.log("informazioni");
             console.log(indexMessage)
 
             if (this.open === false) {
@@ -213,6 +213,14 @@ createApp({
                 this.open = false
                 this.identificaIndex=indexMessage;
             }
+        },
+        removeMessage(indexRemove){
+            
+            //console.log(indexRemove)
+            //console.log(this.contacts[this.activeChat].messages)
+            this.contacts[this.activeChat].messages.splice(indexRemove,1);
+            
+           
         }
 
     },

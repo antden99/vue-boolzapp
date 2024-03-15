@@ -109,8 +109,8 @@
 
                                         <ul v-bind:class="{menu_tendina: index===identificaIndex && open===true}"
                                             class="ghost">
-                                            <li>Info messaggio</li>
-                                            <li>Cancella messaggio</li>
+                                            <li class="info" @click="">Info messaggio</li>
+                                            <li class="info" @click="removeMessage(index)">Cancella messaggio</li>
                                         </ul>
                                         <p>{{index}} {{identificaIndex}}</p>
                                     </div>
@@ -124,8 +124,8 @@
 
                                         <ul v-bind:class="{menu_tendina: index===identificaIndex && open===true}"
                                             class="ghost">
-                                            <li>Info messaggio</li>
-                                            <li>Cancella messaggio</li>
+                                            <li class="info" @click="">Info messaggio</li>
+                                            <li class="info" @click="removeMessage(index)">Cancella messaggio</li>
                                         </ul>
                                         <p>{{index}} {{identificaIndex}}</p>
                                     </div>
