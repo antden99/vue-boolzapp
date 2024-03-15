@@ -309,3 +309,7 @@ input {
         background-color: white;
     }
 }
+
+ul{
+    display: none;
+}

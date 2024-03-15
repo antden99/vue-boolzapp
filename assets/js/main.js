@@ -7,6 +7,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            identificaIndex:0,
             open: false,
             inputSearch: "",
             inputChat: "",
@@ -198,15 +199,19 @@ createApp({
 
             this.inputChat = ""
         },
-        infoMessage() {
+        infoMessage(indexMessage) {
             console.log("informazioni");
+            console.log(indexMessage)
 
             if (this.open === false) {
-
-                this.open = true
+                
+               
+               this.open = true
+               this.identificaIndex=indexMessage;
 
             } else if (this.open === true) {
                 this.open = false
+                this.identificaIndex=indexMessage;
             }
         }
 

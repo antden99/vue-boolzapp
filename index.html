@@ -100,26 +100,28 @@
 
                         <div class="section_message">
                             <!-- v-bind:class="{right: message.status===sent}">{{message.message}} {{message.status}}-->
-                            <div class="" v-for="message in contacts[activeChat].messages">
+                            <div class="" v-for="(message,index) in contacts[activeChat].messages">
 
                                 <p v-if="message.status==='sent'" class="right">
                                     {{message.message}}
-                                    <span class="info_message" @click="infoMessage()"><i
+                                    <span class="info_message" @click="infoMessage(index)"><i
                                             class="fa-solid fa-chevron-down"></i>
-                                        </span></span>
+
+
+                                    </span>
                                 </p>
 
                                 <p v-else="message.status==='received'" class="left">
                                     {{message.message}}
-                                    <span class="info_message" @click="infoMessage()"><i
+                                    <span class="info_message" @click="infoMessage(index)"><i
                                             class="fa-solid fa-chevron-down"></i>
 
-                                        <ul v-bind:class="{menu_tendina: open===true}" v-if="open===true">
+                                        <ul v-bind:class="{menu_tendina: index===identificaIndex && open===true}"  >
                                             <li>Info messaggio</li>
                                             <li>Cancella messaggio</li>
                                         </ul>
-                                                                       
-                                        </span>
+                                        <p>{{index}} {{identificaIndex}}</p>
+                                    </span>
                                 </p>
 
                             </div>
