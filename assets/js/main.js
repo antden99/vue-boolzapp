@@ -7,6 +7,7 @@ createApp({
 
             identificaIndex: 0,
             open: false,
+            open_2: false,
             inputSearch: "",
             inputChat: "",
             activeChat: 0,
@@ -222,10 +223,7 @@ createApp({
 
 
         },
-        data(message, index) {
-            console.log(message, index)
 
-        },
 
         newDate(message) {
             //console.log(message.date, index)
@@ -241,9 +239,30 @@ createApp({
         },
         lastMessage(contact) {
             //console.log(contact)
-            //console.log( contact.messages[contact.messages.length -1])
+           //console.log(contact.messages[contact.messages.length - 1])
             return contact.messages[contact.messages.length - 1].message
+        },
+        emoji() {
+            if (this.open_2 === false) {
+                this.open_2 = true
+
+                //console.log(this.open_2)
+
+            } else if (this.open_2 === true) {
+                this.open_2 = false
+                //console.log(this.open_2)
+            }
+        },
+
+        stampaEmoji(emoji) {
+            //controllo se lemoji selezionata è quella corretta
+            //console.log(emoji); 
+           
+            // Aggiungo l'emoji al campo di input
+            this.inputChat += emoji; 
+            console.log( this.inputChat)
         }
+
 
     },
     computed:

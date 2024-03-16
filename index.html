@@ -54,11 +54,9 @@
                         <div><i class="fa-solid fa-magnifying-glass"></i></div>
                         <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch"
                             @keydown="usersSearch">
-
+                        <!--qui utilizzo il keydown per prendere tutti i caratteri cliccati singolarmente sulla tastiera
+                    ,inoltre al click di ogni carattere si attiva la funzione usersSearch, che viene utilizzata in computed() lato js, ovvero la funzione è sempre attiva, e si attiva anche una prima volta all'avvio della pagina.-->
                     </div>
-
-
-
 
                     <div class="users">
                         <div class="user_ selection" v-for="(contact,index) in contacts" @click="activeChat=index"
@@ -69,14 +67,13 @@
                             </div>
                             <div class="name_chat"><strong>{{contact.name}}</strong>
                                 <div class="text_chat" v-if="contact.messages.length > 0">{{lastMessage(contact)}}</div>
+                                <!--qui inserisco un v-if che controlla se la lunghezza della lista dei messaggi sia maggiore di 0, allora farà vedere l'ultimo messaggio all'interno dell'array, altrimenti non mostrerà nulla perchè appunto l'array non ha messaggi da mostrare-->
                             </div>
                             <div class="time" v-if="contact.messages.length > 0">
                                 {{newDate(contact.messages[contact.messages.length -1])}}
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="col-8 col-11-tablet col-12-mobile">
@@ -133,15 +130,70 @@
 
                                     <div class="hours">{{newDate(message,index)}}</div>
                                 </div>
-
-
                             </div>
-
                         </div>
 
                         <div class="user_ color">
-                            <div class="emoji">
+                            <div class="emoji" @click="emoji()">
                                 <i class="fa-regular fa-face-smile"></i>
+                                <div v-if="open_2 === true">
+                                    <ul id="list_emoji">
+                                       <div>
+                                        <li @click="stampaEmoji('😀')">😀</li>
+                                        <li @click="stampaEmoji('😁')">😁</li>
+                                        <li @click="stampaEmoji('😂')">😂</li>
+                                        <li @click="stampaEmoji('😝')">😝</li>
+                                        <li @click="stampaEmoji('😁')">😁</li>
+                                        <li @click="stampaEmoji('😂')">😂</li>
+                                        <li @click="stampaEmoji('😋')">😋</li>
+                                       </div>
+                                      <div>
+                                        <li @click="stampaEmoji('😰')">😰</li>
+                                        <li @click="stampaEmoji('😭')">😭</li>
+                                        <li @click="stampaEmoji('😪')">😪</li>
+                                        <li @click="stampaEmoji('😎')">😎</li>
+                                        <li @click="stampaEmoji('😑')">😑</li>
+                                        <li @click="stampaEmoji('🤑')">🤑</li>
+                                        <li @click="stampaEmoji('😆')">😆</li>
+                                      </div>
+                                      <div>
+                                        <li @click="stampaEmoji('😀')">😀</li>
+                                        <li @click="stampaEmoji('😁')">😁</li>
+                                        <li @click="stampaEmoji('😂')">😂</li>
+                                        <li @click="stampaEmoji('😝')">😝</li>
+                                        <li @click="stampaEmoji('😁')">😁</li>
+                                        <li @click="stampaEmoji('😂')">😂</li>
+                                        <li @click="stampaEmoji('😋')">😋</li>
+                                       </div>
+                                      <div>
+                                        <li @click="stampaEmoji('😰')">😰</li>
+                                        <li @click="stampaEmoji('😭')">😭</li>
+                                        <li @click="stampaEmoji('😪')">😪</li>
+                                        <li @click="stampaEmoji('😎')">😎</li>
+                                        <li @click="stampaEmoji('😑')">😑</li>
+                                        <li @click="stampaEmoji('🤑')">🤑</li>
+                                        <li @click="stampaEmoji('😆')">😆</li>
+                                      </div>
+                                      <div>
+                                        <li @click="stampaEmoji('😀')">😀</li>
+                                        <li @click="stampaEmoji('😁')">😁</li>
+                                        <li @click="stampaEmoji('😂')">😂</li>
+                                        <li @click="stampaEmoji('😝')">😝</li>
+                                        <li @click="stampaEmoji('😁')">😁</li>
+                                        <li @click="stampaEmoji('😂')">😂</li>
+                                        <li @click="stampaEmoji('😋')">😋</li>
+                                       </div>
+                                      <div>
+                                        <li @click="stampaEmoji('😰')">😰</li>
+                                        <li @click="stampaEmoji('😭')">😭</li>
+                                        <li @click="stampaEmoji('😪')">😪</li>
+                                        <li @click="stampaEmoji('😎')">😎</li>
+                                        <li @click="stampaEmoji('😑')">😑</li>
+                                        <li @click="stampaEmoji('🤑')">🤑</li>
+                                        <li @click="stampaEmoji('😆')">😆</li>
+                                      </div>
+                                    </ul>
+                                </div>
                             </div>
 
 

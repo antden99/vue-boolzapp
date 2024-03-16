@@ -90,6 +90,7 @@ body {
     width: calc((100% / 12) * 4);
     background-color: var(--color-light);
     border: 1px solid var(--color-light-dark);
+    min-width: 400px;
 }
 
 .col-8 {
@@ -301,4 +302,21 @@ input {
     font-size: 12px;
     position: absolute;
     right: 5px;
+}
+
+.emoji{
+   position: relative;;
+    z-index: 2;
+   
+  & ul{
+    background-color: white;
+    position: absolute;
+    bottom: 40px;
+    font-size: 25px;
+
+    & li:hover {
+        cursor: pointer;
+    }
+    }
+    
 }
